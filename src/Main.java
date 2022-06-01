@@ -12,9 +12,9 @@ public class Main {
 
         while (true) {
             showMessage();
-            int choice = Integer.parseInt(scanner.nextLine());
-            if (choice == 4) return;
-            switch (choice) {
+            int input = Integer.parseInt(scanner.nextLine());
+            if (input == 4) return;
+            switch (input) {
                 case 1:
                     System.out.print("добавить задачу: ");
                     list.add(scanner.nextLine());
