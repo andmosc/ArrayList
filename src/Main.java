@@ -8,7 +8,6 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
         List<String> list = new ArrayList<>();
-        int count = 1;
 
         while (true) {
             showMessage();
@@ -17,10 +16,13 @@ public class Main {
             switch (input) {
                 case 1:
                     System.out.print("добавить задачу: ");
-                    list.add(scanner.nextLine());
+                    String name = scanner.nextLine();
+                    list.add(name);
                     break;
                 case 2:
                     if (!showList(list)) System.out.println("Задачи отсутствуют");
+                    for (String k : list)
+                        System.out.println(k);
                     break;
                 case 3:
                     if (!showList(list)) {
@@ -50,7 +52,7 @@ public class Main {
         System.out.println("4. Выход");
     }
 
-    public static boolean showList(List list) {
+    public static boolean showList(List<String> list) {
         Iterator<String> name = list.iterator();
         int count = 1;
         boolean emptry = false;
